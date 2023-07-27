@@ -6,9 +6,29 @@ function TopButtons() {
             id:1,
             title: 'London'
         },
+        {
+            id:2,
+            title: 'Nigeria'
+        },
+        {
+            id:3,
+            title: 'China'
+        },
+        {
+            id:4,
+            title: 'Germany'
+        },
+        {
+            id:5,
+            title: 'Netherlands'
+        },
     ]
   return (
-    <div>TopButtons</div>
+    <div className='my-6 flex items-center justify-center'>
+        {cities.map((city) => (
+            <button className='text-white m-2 text-lg font-medium'>{city.title} </button>
+        ))}
+    </div>
   )
 }
 
