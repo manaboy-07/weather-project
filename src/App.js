@@ -1,6 +1,7 @@
 /** @format */
 
 import "./App.css";
+import Forecast from "./components/Forecast";
 import Inputs from "./components/Inputs";
 import TempDetails from "./components/TempDetails";
 import TimeAndLoacation from "./components/TimeAndLoacation";
@@ -13,6 +14,7 @@ function App() {
       <Inputs />
       <TimeAndLoacation />
       <TempDetails/>
+      <Forecast />
     </div>
   );
 }
