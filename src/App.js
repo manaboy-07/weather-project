@@ -6,8 +6,12 @@ import Inputs from "./components/Inputs";
 import TempDetails from "./components/TempDetails";
 import TimeAndLoacation from "./components/TimeAndLoacation";
 import TopButtons from "./components/TopButtons";
-
+import getWeatherData from "./services/weatherService";
 function App() {
+  const fetchWeather = async () => {
+  const data = await getWeatherData('weather', {q:"London"})
+  console.log(data)
+  }
   return (
     <div className=' rounded-md mx-auto max-w-screen-md mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl shadow-grade-400'>
       <TopButtons />
