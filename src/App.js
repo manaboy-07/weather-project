@@ -12,15 +12,15 @@ import getFormattedWeatherData from "./services/weatherService";
 function App() {
   const [query, setQuery] = useState({ q: "berlin" });
   const [units, setUnits] = useState("metric");
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState(true);
+  
   useEffect(() => {
     const fetchWeather = async () => {
-      // const data = await getFormattedWeatherData({ q: "London" }); // use q as query string
-      // console.log(data);
       await getFormattedWeatherData({ ...query, units }).then((data) => {
         setWeather(data);
       });
     };
+
     fetchWeather();
   }, [query, units]);
 
@@ -30,8 +30,8 @@ function App() {
       <Inputs />
       {weather && (
         <div>
-          <TimeAndLoacation />
-          <TempDetails />
+          <TimeAndLoacation weather={weather} />
+          <TempDetails weather={weather} />
           <Forecast title={"Hourly forecast"} />
           <Forecast title={"Daily forecast"} />
         </div>
